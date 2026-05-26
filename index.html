@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karla Almeida | Fisioterapia Dermatofuncional & PReabilitação</title>
+    <meta name="description" content="Karla Almeida — Fisioterapeuta Dermatofuncional e especialista em Medicina Integrativa e Ortomolecular. PReabilitação, pós-operatório, pós-parto, Lipedema e Linfedema. Itapetininga-SP. CREFITO 181655-F.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           RESET & VARIÁVEIS
+        ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --cream: #FDFBF9;
+            --nude: #E8DDD3;
+            --beige-light: #F5F0EB;
+            --beige: #EDE5DC;
+            --gold: #B8A088;
+            --gold-dark: #9C8570;
+            --sage: #8FA68E;
+            --sage-dark: #6B8A6A;
+            --text: #2E2E2E;
+            --text-soft: #5A5A5A;
+            --text-muted: #8A8A8A;
+            --heading: 'Montserrat', sans-serif;
+            --body: 'Inter', sans-serif;
+            --shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.09);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --ease: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--body);
+            color: var(--text);
+            line-height: 1.75;
+            background-color: var(--cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================================
+           TIPOGRAFIA
+        ============================================ */
+        h1, h2, h3, h4 {
+            font-family: var(--heading);
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.3px;
+        }
+        h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.15; }
+        h2 { font-size: clamp(1.7rem, 3.5vw, 2.5rem); }
+        h3 { font-size: 1.1rem; font-weight: 600; }
+        p { font-weight: 300; color: var(--text-soft); }
+        strong { font-weight: 600; color: var(--text); }
+        a { text-decoration: none; color: inherit; }
+        small { font-size: 0.75rem; color: var(--text-muted); }
+
+        /* ============================================
+           LAYOUT
+        ============================================ */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+        .section { padding: 100px 0; }
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .section-header h2 { margin-bottom: 12px; }
+        .section-header p {
+            font-size: 1rem;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           BOTÕES
+        ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-family: var(--heading);
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: var(--ease);
+            border: none;
+        }
+        .btn-primary {
+            background-color: var(--sage);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background-color: var(--sage-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(107, 138, 106, 0.3);
+        }
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--white);
+        }
+        .btn-gold:hover {
+            background-color: var(--gold-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(156, 133, 112, 0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--sage);
+            color: var(--sage-dark);
+        }
+        .btn-outline:hover {
+            background-color: var(--sage);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+           NAVEGAÇÃO
+        ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px 0;
+            z-index: 1000;
+            background: rgba(253, 251, 249, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--ease);
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-family: var(--heading);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            letter-spacing: -0.5px;
+        }
+        .navbar-brand span {
+            font-weight: 300;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            display: block;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+        .navbar-nav a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-soft);
+            transition: var(--ease);
+            letter-spacing: 0.2px;
+        }
+        .navbar-nav a:hover { color: var(--sage-dark); }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 6px;
+        }
+        .menu-toggle span {
+            width: 22px;
+            height: 2px;
+            background-color: var(--text);
+            border-radius: 2px;
+            transition: var(--ease);
+        }
+        .navbar-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--gold-dark);
+            transition: var(--ease);
+            letter-spacing: 0.2px;
+        }
+        .navbar-instagram:hover {
+            color: var(--sage-dark);
+        }
+
+        /* ============================================
+           HERO
+        ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(160deg, var(--cream) 0%, var(--beige-light) 40%, var(--beige) 80%, var(--nude) 100%);
+            padding: 140px 28px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(143, 166, 142, 0.06) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(184, 160, 136, 0.06) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .hero-content {
+            max-width: 720px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(184, 160, 136, 0.12);
+            border: 1px solid rgba(184, 160, 136, 0.2);
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--gold-dark);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        .hero h1 { margin-bottom: 24px; }
+        .hero-text {
+            font-size: 1.08rem;
+            margin-bottom: 40px;
+            line-height: 1.85;
+            color: var(--text-soft);
+        }
+
+        /* ============================================
+           SOBRE
+        ============================================ */
+        .about { background-color: var(--white); }
+        .about-content {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .about-image {
+            width: 100%;
+            height: 520px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        .about-text h2 { text-align: left; margin-bottom: 4px; }
+        .about-crefito {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gold-dark);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .about-text p {
+            margin-bottom: 16px;
+            font-size: 0.93rem;
+        }
+        .about-seal {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 14px 22px;
+            background: linear-gradient(135deg, var(--beige-light), var(--beige));
+            border-left: 3px solid var(--sage);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--sage-dark);
+        }
+
+        /* ============================================
+           MANIFESTO / PREABILITAÇÃO
+        ============================================ */
+        .manifesto { background-color: var(--beige-light); }
+        .manifesto-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .manifesto-inner h2 { margin-bottom: 8px; }
+        .manifesto-sub {
+            font-size: 0.9rem;
+            color: var(--gold-dark);
+            font-weight: 500;
+            margin-bottom: 36px;
+            letter-spacing: 0.5px;
+        }
+        .manifesto-quote {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text);
+            line-height: 1.9;
+            margin-bottom: 28px;
+            padding: 32px 36px;
+            background: var(--white);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--sage);
+            text-align: left;
+            box-shadow: var(--shadow);
+        }
+        .manifesto-inner > p {
+            font-size: 0.93rem;
+            line-height: 1.85;
+        }
+
+        /* ============================================
+           PACOTES
+        ============================================ */
+        .packages { background-color: var(--white); }
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .package-card {
+            background: var(--beige-light);
+            border-radius: var(--radius);
+            padding: 36px 26px 32px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--ease);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        .package-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--sage), var(--gold));
+            opacity: 0;
+            transition: var(--ease);
+        }
+        .package-card:hover::after { opacity: 1; }
+        .package-icon {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto 16px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .package-card h3 { margin-bottom: 12px; color: var(--text); }
+        .package-card p {
+            font-size: 0.84rem;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        /* ============================================
+           TECNOLOGIAS
+        ============================================ */
+        .technologies { background-color: var(--beige-light); }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+        .tech-item {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 22px 14px;
+            text-align: center;
+            transition: var(--ease);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        .tech-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        .tech-item-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .tech-item p {
+            font-size: 0.76rem;
+            font-weight: 500;
+            color: var(--text);
+            line-height: 1.4;
+        }
+
+        /* ============================================
+           DEPOIMENTOS
+        ============================================ */
+        .testimonials { background-color: var(--white); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .testimonial-card {
+            background: var(--beige-light);
+            border-radius: var(--radius);
+            padding: 36px 28px 28px;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        .testimonial-card::before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 3.5rem;
+            color: var(--sage);
+            opacity: 0.25;
+            position: absolute;
+            top: 16px;
+            left: 24px;
+            line-height: 1;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 0.88rem;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+        }
+        .testimonial-author {
+            font-family: var(--heading);
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--gold-dark);
+            letter-spacing: 0.3px;
+        }
+
+        /* ============================================
+           AGENDAMENTO
+        ============================================ */
+        .booking {
+            background: linear-gradient(160deg, var(--beige-light) 0%, var(--nude) 100%);
+        }
+        .booking-inner {
+            text-align: center;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+        .booking-inner h2 { margin-bottom: 14px; }
+        .booking-inner > p { margin-bottom: 20px; font-size: 0.95rem; }
+        .booking-steps {
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            margin: 44px 0;
+            flex-wrap: wrap;
+        }
+        .booking-step { text-align: center; max-width: 140px; }
+        .step-num {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--sage);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin: 0 auto 10px;
+        }
+        .booking-step p {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        .booking-note {
+            margin-top: 18px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            background-color: var(--text);
+            color: var(--beige-light);
+            padding: 56px 0 28px;
+            text-align: center;
+        }
+        .footer-brand {
+            font-family: var(--heading);
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+        .footer-crefito {
+            font-size: 0.72rem;
+            color: rgba(245, 240, 235, 0.45);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .footer p {
+            color: rgba(245, 240, 235, 0.65);
+            font-size: 0.84rem;
+            margin-bottom: 6px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: rgba(245, 240, 235, 0.6);
+            font-size: 0.8rem;
+            transition: var(--ease);
+        }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 24px;
+            padding: 12px 28px;
+            border: 1.5px solid var(--gold);
+            border-radius: 50px;
+            color: var(--gold);
+            font-family: var(--heading);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            transition: var(--ease);
+        }
+        .footer-instagram:hover {
+            background-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(184, 160, 136, 0.3);
+        }
+        .footer-instagram svg { transition: var(--ease); }
+        .footer-instagram:hover svg { fill: var(--white); }
+        .footer-copy {
+            margin-top: 28px;
+            font-size: 0.72rem;
+            opacity: 0.4;
+        }
+
+        /* ============================================
+           WHATSAPP FLUTUANTE
+        ============================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 58px;
+            height: 58px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+            z-index: 9999;
+            transition: var(--ease);
+            animation: waPulse 2.5s infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+        }
+        .whatsapp-float svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+        @keyframes waPulse {
+            0%, 100% { box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35); }
+            50% { box-shadow: 0 4px 28px rgba(37, 211, 102, 0.55); }
+        }
+
+        /* ============================================
+           RESPONSIVIDADE
+        ============================================ */
+        @media (max-width: 1024px) {
+            .packages-grid { grid-template-columns: repeat(2, 1fr); }
+            .tech-grid { grid-template-columns: repeat(3, 1fr); }
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 44px;
+            }
+            .about-image { height: 420px; }
+            .about-text h2 { text-align: center; }
+            .about-crefito { text-align: center; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 28px;
+                gap: 18px;
+                box-shadow: var(--shadow);
+                border-top: 1px solid rgba(0, 0, 0, 0.04);
+            }
+            .navbar-nav.active { display: flex; }
+            .menu-toggle { display: flex; }
+            .packages-grid,
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .tech-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero { min-height: auto; padding: 140px 24px 80px; }
+            .section { padding: 72px 0; }
+            .booking-steps { gap: 20px; }
+            .about-image { height: 360px; }
+        }
+
+        @media (max-width: 480px) {
+            .tech-grid { grid-template-columns: 1fr 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================
+         NAVEGAÇÃO
+    ============================================ -->
+    <nav class="navbar" role="navigation" aria-label="Navegação principal">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                Karla Almeida
+                <span>Fisioterapia | Medicina Integrativa</span>
+            </a>
+            <a href="https://www.instagram.com/drakarlaalmeida/" target="_blank" rel="noopener noreferrer" class="navbar-instagram" aria-label="Instagram @drakarlaalmeida">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                @drakarlaalmeida
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar-nav" id="navMenu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#preabilitacao">PReabilitação</a></li>
+                <li><a href="#pacotes">Pacotes</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#agendamento">Agendar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO
+    ============================================ -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <span class="hero-badge">PReabilitação em Cirurgias Plásticas</span>
+            <h1>Uma recuperação mais rápida, segura, tranquila e menos dolorida para a sua cirurgia plástica</h1>
+            <p class="hero-text">Cuidado completo do pré ao pós-operatório com tecnologia avançada, protocolos individualizados e o acolhimento que você merece.</p>
+            <a href="#agendamento" class="btn btn-primary">Agendar Minha PReabilitação</a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SOBRE
+    ============================================ -->
+    <section class="section about" id="sobre">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets/foto-profissional.jpg" alt="Karla Almeida — Fisioterapeuta Dermatofuncional e Medicina Integrativa">
+                </div>
+                <div class="about-text">
+                    <h2>Karla Almeida</h2>
+                    <p class="about-crefito">CREFITO 181655-F</p>
+                    <p>Fisioterapeuta Dermatofuncional e especialista em <strong>Medicina Integrativa e Ortomolecular</strong>, com atuação em Itapetininga – SP. Pioneira em Taping aplicado ao pós-operatório e expert no uso de tecnologias associadas à reabilitação de cirurgias plásticas.</p>
+                    <p>Meu trabalho vai muito além da drenagem. Atuo com protocolos completos para <strong>pré e pós-operatório, recuperação pós-parto, Lipedema e Linfedema</strong> — respeitando cada fase da cicatrização e tratando intercorrências com segurança e evidência científica.</p>
+                    <p>Cada paciente é única. Meu compromisso é oferecer um cuidado individualizado, acolhedor e que realmente transforma a experiência de recuperação.</p>
+                    <div class="about-seal">✦ Mais de 15 anos de experiência transformando pós-operatórios</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         POR QUE PREABILITAÇÃO
+    ============================================ -->
+    <section class="section manifesto" id="preabilitacao">
+        <div class="container">
+            <div class="manifesto-inner">
+                <h2>Por que PReabilitação?</h2>
+                <p class="manifesto-sub">Muito além da drenagem</p>
+
+                <div class="manifesto-quote">
+                    Pós-operatório não se trata apenas de drenagem linfática. Trabalhamos a drenagem, mas nunca de forma isolada. Entendemos o trauma cirúrgico e estamos aptas a tratar qualquer intercorrência ou complicação. <strong>Reabilitar vai muito além.</strong>
+                </div>
+
+                <p>Nosso protocolo trabalha a paciente por completo: desde um simples inchaço até o tratamento avançado da cicatriz, respeitando cada fase da cicatrização e a individualidade de cada corpo. É um cuidado integral, do pré ao pós, com acompanhamento contínuo e personalizado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PACOTES
+    ============================================ -->
+    <section class="section packages" id="pacotes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Pacotes</h2>
+                <p>Protocolos completos e personalizados para cada fase da sua jornada.</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-icon">🛡️</div>
+                    <h3>Pré-Operatório</h3>
+                    <p>Preparo do corpo com foco em desinflamar e fortalecer a imunidade através da Ozonioterapia moduladora. Resultado: recuperação mais rápida, tranquila e com menos intercorrências. Inclui orientações de alimentação e fórmulas antiglicantes.</p>
+                </div>
+                <div class="package-card">
+                    <div class="package-icon">🩺</div>
+                    <h3>Pós-Operatório</h3>
+                    <p>Sessões com avaliações diárias para definir o melhor tratamento em cada fase da cicatrização. Acompanhamento completo: edema, fibrose, cicatriz e funcionalidade com protocolos atualizados e tecnologia de ponta.</p>
+                </div>
+                <div class="package-card">
+                    <div class="package-icon">💉</div>
+                    <h3>Suplementação Injetável</h3>
+                    <p>Protocolos personalizados com valores e condutas definidos estritamente a partir dos exames laboratoriais da paciente. Segurança e individualidade em cada aplicação.</p>
+                </div>
+                <div class="package-card">
+                    <div class="package-icon">🫧</div>
+                    <h3>Ozonioterapia</h3>
+                    <p>Ozônio medicinal para modulação imunológica, ação anti-inflamatória e estímulo à cicatrização. Aplicação sistêmica e local que potencializa a recuperação e o bem-estar.</p>
+                </div>
+                <div class="package-card">
+                    <div class="package-icon">🔬</div>
+                    <h3>Lasers CO2</h3>
+                    <p>Laser fracionado de CO2 para rejuvenescimento, tratamento de cicatrizes, manchas e estímulo à produção de colágeno. Resultados visíveis com segurança e precisão.</p>
+                </div>
+                <div class="package-card">
+                    <div class="package-icon">✨</div>
+                    <h3>Liftera 2</h3>
+                    <p>Ultrassom microfocado de última geração para lifting não cirúrgico, firmeza e contorno facial e corporal. Resultados naturais e duradouros.</p>
+                </div>
+                <div class="package-card">
+                    <div class="package-icon">💫</div>
+                    <h3>Depilação</h3>
+                    <p>Depilação a laser com tecnologia avançada para todos os tipos de pele. Sessões rápidas, seguras e com resultados duradouros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TECNOLOGIAS
+    ============================================ -->
+    <section class="section technologies" id="tecnologias">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recursos e Tecnologias</h2>
+                <p>Equipamentos e técnicas de ponta para garantir os melhores resultados no seu tratamento.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <span class="tech-item-icon">🔬</span>
+                    <p>Laserterapia<br><small>sistêmica e local</small></p>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item-icon">🫧</span>
+                    <p>Ozonioterapia<br><small>sistêmica e local</small></p>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item-icon">🩹</span>
+                    <p>Taping</p>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item-icon">📡</span>
+                    <p>Radiofrequência</p>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item-icon">🔊</span>
+                    <p>Ultrassom</p>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item-icon">🤲</span>
+                    <p>Liberação Miofascial<br><small>e Tecidual</small></p>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item-icon">💆</span>
+                    <p>Drenagem Linfática Manual</p>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item-icon">🧘</span>
+                    <p>Alongamentos</p>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item-icon">🏋️</span>
+                    <p>Exercícios Metabólicos<br><small>e Funcionais</small></p>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-item-icon">💬</span>
+                    <p>Orientações<br><small>e Suporte Contínuo</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         DEPOIMENTOS
+    ============================================ -->
+    <section class="section testimonials" id="depoimentos">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que dizem minhas pacientes</h2>
+                <p>Cada depoimento reflete o cuidado e a dedicação presentes em cada atendimento.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>Me senti acolhida desde o primeiro momento. A recuperação da minha lipo foi muito mais tranquila do que eu imaginava. Profissional incrível e atenciosa!</p>
+                    <span class="testimonial-author">— Maria C.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>O preparo pré-operatório fez toda a diferença. Não tive nenhuma intercorrência e minha cicatrização foi elogiada pelo cirurgião. Super recomendo!</p>
+                    <span class="testimonial-author">— Juliana R.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>A Karla entende de verdade o que é pós-operatório. Não é só drenagem, é um cuidado completo. Me senti segura em cada sessão.</p>
+                    <span class="testimonial-author">— Fernanda S.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>Comecei a ozonioterapia sem muitas expectativas e o resultado me surpreendeu. Minha imunidade melhorou, a inflamação reduziu e me sinto com muito mais disposição. Tratamento transformador!</p>
+                    <span class="testimonial-author">— Patrícia M.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>Depois de anos sofrendo com dores e inchaço nas pernas, finalmente encontrei alguém que entende de lipedema. A Karla me explicou tudo com paciência e o tratamento mudou minha qualidade de vida.</p>
+                    <span class="testimonial-author">— Renata L.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>Fiz sessões de ozônio no pós-operatório e a cicatrização foi impressionante. Meu cirurgião ficou surpreso com a evolução. Indico de olhos fechados!</p>
+                    <span class="testimonial-author">— Camila D.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         AGENDAMENTO
+    ============================================ -->
+    <section class="section booking" id="agendamento">
+        <div class="container">
+            <div class="booking-inner">
+                <h2>Agende sua PReabilitação</h2>
+                <p>Simples, rápido e pensado para sua comodidade. Inicie seu cuidado com quem entende do assunto.</p>
+
+                <div class="booking-steps">
+                    <div class="booking-step">
+                        <div class="step-num">1</div>
+                        <p>Entre em contato</p>
+                    </div>
+                    <div class="booking-step">
+                        <div class="step-num">2</div>
+                        <p>Avaliação personalizada</p>
+                    </div>
+                    <div class="booking-step">
+                        <div class="step-num">3</div>
+                        <p>Início do protocolo</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/5515981080751?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20minha%20cirurgia." target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+                    Reservar Meu Horário
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">Karla Almeida</div>
+            <p class="footer-crefito">CREFITO 181655-F</p>
+            <p>Fisioterapia Dermatofuncional | Medicina Integrativa e Ortomolecular</p>
+            <p>Itapetininga – SP | Atendimento com hora marcada</p>
+            <div class="footer-links">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#preabilitacao">PReabilitação</a>
+                <a href="#pacotes">Pacotes</a>
+                <a href="#tecnologias">Tecnologias</a>
+                <a href="#agendamento">Agendar</a>
+            </div>
+            <a href="https://www.instagram.com/drakarlaalmeida/" target="_blank" rel="noopener noreferrer" class="footer-instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                @drakarlaalmeida
+            </a>
+            <p class="footer-copy">&copy; 2026 Karla Almeida. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         WHATSAPP FLUTUANTE
+    ============================================ -->
+    <a href="https://wa.me/5515981080751?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20minha%20cirurgia."
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Conversar pelo WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- ============================================
+         JS — Menu Mobile
+    ============================================ -->
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navMenu');
+            const toggle = document.querySelector('.menu-toggle');
+            const isOpen = nav.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', isOpen);
+        }
+        document.querySelectorAll('.navbar-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+                document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>
